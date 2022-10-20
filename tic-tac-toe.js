@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded",function(){
         }
     }
     let cx ="X";//CHEMICAL X POWER PUFF REFERENCE
-    let ns =document.getElementsByClassName("square");
+    let ns =document.getElementsByClassName("square");//new squaress ☺
 
     for(let l=0; l<ns.length; l++){
         ns[l].addEventListener("click",function(){
@@ -27,9 +27,24 @@ document.addEventListener("DOMContentLoaded",function(){
                 }
             }
         })
+
+
+        ns[l].addEventListener("mouseover", function(){
+            ns[l].classList.add("hover");
+        })
+        ns[l].addEventListener("mouseout", function(){
+            ns[l].classList.remove("hover");
+        }
+       
+        )
     }
 
- 
     
+   
+
+       
+        
+
+
 })
 
