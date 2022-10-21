@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded",function(){
     }
     let cx ="X";//CHEMICAL X POWER PUFF REFERENCE
     let ns =document.getElementsByClassName("square");//new squaress ☺
-    let indexk = new Array(9); 
 
     for(let l=0; l<ns.length; l++){
         ns[l].addEventListener("click",function(){ //adds X and 0 on click
@@ -50,19 +49,30 @@ document.addEventListener("DOMContentLoaded",function(){
         )
     }
 
+    //NEW GAME   //DOES NOT WORK
+    let button =document.getElementsByClassName("btn");
+    button[0].addEventListener("click",function(){
+    for (let n=0;n>sq.length;n++){
+        winstats="Move your mouse over a square and click to play an X or an O.";
+        winstats=classList.remove("you-won");
+        sq[n].innerHTML="";
+        sq[n].className = "square";
+        }})
+
+
     let winstats = document.getElementById("status");
    
     function row(sq){ //checks the rows
         if(sq[0].innerHTML != ""){
-            if(sq[0].innerHTML==(sq[1].innerHTML && sq[2].innerHTML))
+            if(sq[0].innerHTML==sq[1].innerHTML && sq[0].innerHTML==ssq[2].innerHTML)
             return true;
         }
         if(sq[3].innerHTML != ""){
-            if(sq[3].innerHTML==(sq[4].innerHTML && sq[5].innerHTML))
+            if(sq[3].innerHTML==sq[4].innerHTML && sq[3].innerHTML==sq[5].innerHTML)
             return true;
         }
         if(sq[6].innerHTML != ""){
-            if(sq[6].innerHTML==(sq[7].innerHTML && sq[8].innerHTML))
+            if(sq[6].innerHTML==sq[7].innerHTML && sq[6].innerHTML==sq[8].innerHTML)
             return true;
         }
 
@@ -70,15 +80,15 @@ document.addEventListener("DOMContentLoaded",function(){
 
     function col(ns){//checks the columns
         if(sq[0].innerHTML != ""){
-            if(sq[0].innerHTML==(sq[3].innerHTML && sq[6].innerHTML))
+            if(sq[0].innerHTML==sq[3].innerHTML && sq[0].innerHTML==sq[6].innerHTML)
             return true;
         }
         if(sq[1].innerHTML != ""){
-            if(sq[1].innerHTML==(sq[4].innerHTML && sq[7].innerHTML))
+            if(sq[1].innerHTML==sq[4].innerHTML && sq[1].innerHTML==sq[7].innerHTML)
             return true;
         }
         if(sq[2].innerHTML != ""){
-            if(sq[2].innerHTML==(sq[5].innerHTML && sq[8].innerHTML))
+            if(sq[2].innerHTML == sq[5].innerHTML && sq[2].innerHTML == sq[8].innerHTML)
             return true;
         }
 
@@ -86,11 +96,11 @@ document.addEventListener("DOMContentLoaded",function(){
 
     function dia(sq){//checks the diagonal
         if(sq[0].innerHTML != ""){
-            if(sq[0].innerHTML==(sq[4].innerHTML && sq[8].innerHTML))
+            if(sq[0].innerHTML == sq[4].innerHTML && sq[0].innerHTML == sq[8].innerHTML)
             return true;
         }
         if(sq[2].innerHTML != ""){
-            if(sq[2].innerHTML==(sq[4].innerHTML && sq[6].innerHTML))
+            if(sq[2].innerHTML == sq[4].innerHTML && sq[2].innerHTML == sq[6].innerHTML)
             return true;
         }
       
@@ -102,3 +112,48 @@ document.addEventListener("DOMContentLoaded",function(){
 
 })
 
+/*function row(sq){ //checks the rows  ISSUE IS THAT IT DECLARES WIN AFTER IT FINDS 2 OF EITHER X OR 0
+if(sq[0].innerHTML != ""){
+    if(sq[0].innerHTML==(sq[1].innerHTML && sq[2].innerHTML))
+    return true;
+}
+if(sq[3].innerHTML != ""){
+    if(sq[3].innerHTML==(sq[4].innerHTML && sq[5].innerHTML))
+    return true;
+}
+if(sq[6].innerHTML != ""){
+    if(sq[6].innerHTML==(sq[7].innerHTML && sq[8].innerHTML))
+    return true;
+}
+
+}
+
+function col(ns){//checks the columns
+if(sq[0].innerHTML != ""){
+    if(sq[0].innerHTML==(sq[3].innerHTML && sq[6].innerHTML))
+    return true;
+}
+if(sq[1].innerHTML != ""){
+    if(sq[1].innerHTML==(sq[4].innerHTML && sq[7].innerHTML))
+    return true;
+}
+if(sq[2].innerHTML != ""){
+    if(sq[2].innerHTML==(sq[5].innerHTML && sq[8].innerHTML))
+    return true;
+}
+
+}
+
+function dia(sq){//checks the diagonal
+if(sq[0].innerHTML != ""){
+    if(sq[0].innerHTML==(sq[4].innerHTML && sq[8].innerHTML))
+    return true;
+}
+if(sq[2].innerHTML != ""){
+    if(sq[2].innerHTML==(sq[4].innerHTML && sq[6].innerHTML))
+    return true;
+}
+
+
+}
+*/
